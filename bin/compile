@@ -22,7 +22,7 @@ indent() {
   sed -u 's/^/       /'
 }
 
-if [[ -z "${ES_VERSION}" ]]; then
+if [[ -z "${ES_VERSION}" ]]; then
   VERSION="2.4.4"
 else
   VERSION="${ES_VERSION}"
