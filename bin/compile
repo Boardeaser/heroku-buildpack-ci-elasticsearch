@@ -22,7 +22,12 @@ indent() {
   sed -u 's/^/       /'
 }
 
-VERSION="6.4.3"
+if [[ -z "${ES_VERSION}" ]]; then
+  VERSION="2.4.4"
+else
+  VERSION="${ES_VERSION}"
+fi
+
 INSTALL_DIR="$BUILD_DIR/.heroku/vendor/elasticsearch"
 PROFILE_PATH="$BUILD_DIR/.profile.d/elasticsearch.sh"
 
