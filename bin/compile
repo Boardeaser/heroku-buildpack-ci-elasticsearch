@@ -31,7 +31,7 @@ fi
 
 if [[ "${VERSION}" == "2.4.6" ]]
 then
-  URL="https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.4.6/${NAME}.tar.gz"
+  URL="https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.4.6/elasticsearch-2.4.6.tar.gz"
 elif [[ "${VERSION}" == "7.7.0" ]]
 then
   URL="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.7.0-linux-x86_64.tar.gz"
@@ -53,7 +53,7 @@ echo "Search in cache directory $CACHE_DIR/$NAME" | indent
 if [ ! -d $CACHE_DIR/$NAME ]; then
 	echo "Fetching and installing elasticsearch" | indent
 	cd $CACHE_DIR
-	curl -sOL $URL -o "$NAME.tar.gz"
+	curl -sL $URL -o "$NAME.tar.gz"
 	tar zxf "$NAME.tar.gz"
 	cd "$NAME"
 	cp -r $CACHE_DIR/$NAME/* $INSTALL_DIR/
