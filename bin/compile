@@ -22,15 +22,18 @@ indent() {
   sed -u 's/^/       /'
 }
 
-if [[ -z "${ES_VERSION}" ]]; then
+if [[ -z "${ES_VERSION}" ]]
+then
   VERSION="2.4.6"
 else
   VERSION="${ES_VERSION}"
 fi
 
-if [[ "${VERSION}" == "2.4.6" ]]; then
+if [[ "${VERSION}" == "2.4.6" ]]
+then
   URL="https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.4.6/elasticsearch-2.4.6.tar.gz"
-elif [[ "${VERSION}" == "7.7.0"]]; then
+elif [[ "${VERSION}" == "7.7.0" ]]
+then
   URL="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.7.0-linux-x86_64.tar.gz"
 else
   URL="https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-$VERSION.tar.gz"
