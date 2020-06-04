@@ -62,4 +62,10 @@ else
 	cp -r $CACHE_DIR/$NAME/*  $INSTALL_DIR/
 fi
 
+cat <<EOF >> $PROFILE_PATH
+export PATH=/app/.heroku/vendor/elasticsearch/bin:\$PATH
+
+source $BUILD_DIR/.profile.d/jvmcommon.sh
+EOF
+
 echo "Done" | indent
