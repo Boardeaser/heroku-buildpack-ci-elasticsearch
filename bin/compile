@@ -61,17 +61,8 @@ fi
 
 cat <<EOF >> $PROFILE_PATH
 export PATH=/app/.heroku/vendor/elasticsearch/bin:\$PATH
+
 source $BUILD_DIR/.profile.d/jvmcommon.sh
-
-if [ -z "${TEST_CLUSTER_PORT}" ] && [ -z "${TEST_CLUSTER_NODES}"]; then
-	if [ ! -f /tmp/es.pid ]; then
-		echo "Starting ElasticSearch..."
-		elasticsearch --daemonize --pidfile /tmp/es.pid
-	fi
-else
-	export ELASTICSEARCH_URL=localhost:9200
-fi
-
 EOF
 
 echo "Done" | indent
